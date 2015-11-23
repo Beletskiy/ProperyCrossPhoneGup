@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.min.css">
+    <link href="assets/css/main.css" type="text/css" rel="stylesheet">
+    <title>PropertyCross</title>
+</head>
+<body>
+
+<div class="ui" id="wrapper">
+</div>
+
+<script type="text/template" id="form-template">
+    <section class="top-section font20">
+        <h2>PropertyCross
+            <button class="faves ui button right floated" id="faves">Faves</button>
+        </h2>
+
+    </section>
+    <p>Use the form below to search for houses to buy.
+        You can search by place-name, postcode, or click 'My location', to search in your current location.</p>
+    <input type="text" size="40%" id="inputCity" autofocus="" value=''>
+    <p>
+        <button id="go-button" class="ui button left floated">Go</button>
+    </p>
+</script>
+
+<script type="text/template" id="houses-template">
+    <p id="matches"><i class="left arrow icon"></i> <%- amountHousesOnThePage %> of <%- amountOfAllHouses %> matches
+    </p>
+
+    <% if ((amountOfAllHouses === 0) && (showResult)) { %>
+    <h2><%- message %></h2>
+
+    <% } else { %>
+
+    <ul class="house-list">
+        <% _.each(houses, function(houses,index) { %>
+        <li id="<%- index %>">
+            <div class="one-house-briefly">
+                <img class="thumb-img" src=<%- houses.attributes.thumb_url %> alt='house' />
+                <span class="house-info-cost"><%- houses.attributes.price_formatted %></span>
+                <span class="house-info-summary"><%- houses.attributes.summary %></span>
+            </div>
+            <p>&nbsp;</p>
+        </li>
+        <% }); %>
+    </ul>
+    <% } %>
+
+    <% if (flag) { %>
+    <div id="spinner-loader"></div>
+    <% } else if (houses.length > 0) { %>
+    <button id="more-results" class="ui button">More results</button>
+    <% } %>
+
+</script>
+
+<script type="text/template" id="details-template">
+    <section class="top-section">
+        <h2><i class="left arrow icon"></i>Property Details
+            <button class="faves ui button right floated" id="add-to-favorite" title="Add to favorite"> +</button>
+        </h2>
+    </section>
+    <p class="font20"><b> <%- priceFormatted %> </b></p>
+    <p class="font20"><b> <%- title %> </b></p>
+    <img class="big-img" src=<%- imgUrl %> alt='house' />
+    <p><span> <%- bedroomNumber %> bed, </span>
+        <span> <%- bathroomNumber %> bathroom </span></p>
+    <span><%- summary %></span>
+</script>
+
+<script type="text/template" id="favorite-template">
+
+    <h2 id='favorite'><i class="left arrow icon"></i>Favorite
+
+    </h2>
+
+    <ul class="favorite-list">
+        <% _.each(houses, function(houses,index) { %>
+        <li id="<%- index %>">
+            <div class="one-house-briefly">
+                <img class="thumb-img" src=<%- houses.attributes.thumb_url %> alt='house' />
+                <span class="house-info-cost"><%- houses.attributes.price_formatted %></span>
+                <span class="house-info-summary"><%- houses.attributes.summary %></span>
+            </div>
+            <p>&nbsp;</p>
+        </li>
+        <% }); %>
+    </ul>
+    <h2><%- message %></h2>
+</script>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+<script src="bower_components/backbone-localstorage/backbone.localStorage.js"></script>
+<script src="src/models/house.model.js"></script>
+<script src="src/collections/houses.collection.js"></script>
+<script src="src/collections/favorites.collection.js"></script>
+<script src="src/views/favorites.view.js"></script>
+<script src="src/views/details.view.js"></script>
+<script src="src/views/houses.view.js"></script>
+<script src="src/views/form.view.js"></script>
+<script src="src/router.js"></script>
+<script src="src/main.application.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+#wrapper {
+    padding: 0 15px;
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    margin: 35px auto;
+}
+
+#wrapper input {
+    height: 40px;
+}
+
+.font20 {
+    font-size: 20px;
+}
+
+p#matches {
+    font-size: 22px;
+    text-align: center;
+    color: darkolivegreen;
+}
+
+section.top-section {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+section + p {
+    font-size: 16px;
+}
+
+.top-section h2 {
+    text-align: center;
+    color: darkolivegreen;
+}
+
+input + p {
+    margin-top: 20px;
+}
+
+p#recent-searches {
+    font-size: 18px;
+}
+
+#spinner-loader {
+    animation: spinner-loader 1500ms infinite linear;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    border-radius: 0.5em;
+    -moz-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+    -webkit-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+    box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-indent: 100%;
+    margin: 50px auto;
+}
+
+@keyframes spinner-loader {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.one-house-briefly {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 2px;
+    float: left;
+}
+
+.one-house-briefly + p {
+    line-height: 1px;
+}
+
+.house-info-cost, .house-info-summary, .thumb-img {
+    float: left;
+    margin: 5px 0 5px 5px;
+}
+
+.house-list, .favorite-list {
+    list-style: none;
+    padding: 0;
+}
+
+#more-results {
+    font-size: 20px;
+    display: block!important;
+    margin: 0 auto;
+}
+
+#favorite {
+    text-align: center;
+    color: darkolivegreen;
+}
+
+span {
+    font-size: 16px;
+}
+
+i.icon {
+    font-size: 1.2em;
+    float: left;
+    color: dimgrey;
+}
